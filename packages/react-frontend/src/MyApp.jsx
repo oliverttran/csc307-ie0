@@ -29,6 +29,31 @@ function MyApp() {
         console.log(error);
       });
   }, []);
+
+  function postUser(person) {
+    console.log(person);
+    const promise = fetch("Http://localhost:8000/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(person),
+    });
+
+    return promise;
+  }
+
+  function updateList(person) {
+    postUser(person)
+      .then((res) => {
+        if (res.status == 201) {
+          setCharacters([...characters, person]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
   
 
   return (

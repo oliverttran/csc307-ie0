@@ -7,8 +7,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "front": "cd packages/react-frontend && npm run dev",
-    "start": "cd packages/express-backend && npm start && cd"
+    "front": "cd packages/react-frontend && npm run start",
+    "start": "cd packages/express-backend && npm start"
   },
   "workspaces": [
       "packages/*"
